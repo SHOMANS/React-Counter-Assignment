@@ -10,63 +10,7 @@ library.add(faPlusCircle, faMinusCircle);
 // }
 
 class SmallCounter extends React.Component {
-  // state = {
-  //   itemCounter: this.props.counter,
-  //   enabling: false,
-  //   hiding: true,
-  // };
-
-  // counterInc = () => {
-  //   if (this.props.counter === 0) {
-  //     this.forceUpdate();
-  //     this.setState(() => {
-  //       return {
-  //         itemCounter: this.props.counter,
-  //         enabling: true,
-  //         hiding: false,
-  //       };
-  //     });
-  //   }
-  //   this.setState((prevState) => {
-  //     return {
-  //       itemCounter: prevState.itemCounter + 1,
-  //       enabling: true,
-  //       hiding: false,
-  //     };
-  //   });
-  // };
-
-  // counterDec = () => {
-  //   this.setState((prevState) => {
-  //     if (prevState.itemCounter > 0) {
-  //       if (prevState.itemCounter === 1) {
-  //         return { itemCounter: prevState.itemCounter - 1, hiding: true };
-  //       }
-  //       return { itemCounter: prevState.itemCounter - 1 };
-  //     }
-  //     return { enabling: false, hiding: true };
-  //   });
-  // };
-
-  // reset() {
-  //   this.setState(() => {
-  //     return { itemCounter: 0 };
-  //   });
-  // }
-
-  // getSnapshotBeforeUpdate(prevProps) {
-  //   if (prevProps.counter === 0) {
-  //     console.log("state has changed.");
-  //     this.setState({
-  //       itemCounter: 0,
-  //     });
-  //   }
-  // }
-
-  // updateState = updateState.bind(this);
-
   render() {
-    // const { enabling, hiding } = this.state;
     const { counter } = this.props;
 
     return (
