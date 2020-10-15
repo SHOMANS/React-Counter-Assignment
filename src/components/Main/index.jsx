@@ -31,11 +31,11 @@ class Main extends React.Component {
   };
 
   // countingInc = (mainCounter) => {
-  //   const count = { mainCounter };
+  //   const senpai = mainCounter;
   //   this.setState((prevState) => {
   //     return {
   //       counter: prevState.counter + 1,
-  //       ${count}: prevState.count + 1,
+  //       senpai: prevState.mainCounter + 1,
   //     };
   //   });
   // };
@@ -55,8 +55,13 @@ class Main extends React.Component {
 
   countingIncOne = () => {
     this.setState((prevState) => {
+      if (prevState.smallCounterOne === 0) {
+        return {
+          counter: prevState.counter + 1,
+          smallCounterOne: prevState.smallCounterOne + 1,
+        };
+      }
       return {
-        counter: prevState.counter + 1,
         smallCounterOne: prevState.smallCounterOne + 1,
       };
     });
@@ -65,11 +70,16 @@ class Main extends React.Component {
   countingDecOne = () => {
     this.setState((prevState) => {
       if (prevState.smallCounterOne > 0) {
-        return {
-          counter: prevState.counter - 1,
-          smallCounterOne: prevState.smallCounterOne - 1,
-        };
+        if (prevState.smallCounterOne === 1) {
+          return {
+            counter: prevState.counter - 1,
+            smallCounterOne: prevState.smallCounterOne - 1,
+          };
+        }
       }
+      return {
+        smallCounterOne: prevState.smallCounterOne - 1,
+      };
     });
   };
 
@@ -79,8 +89,13 @@ class Main extends React.Component {
 
   countingIncTwo = () => {
     this.setState((prevState) => {
+      if (prevState.smallCounterTwo === 0) {
+        return {
+          counter: prevState.counter + 1,
+          smallCounterTwo: prevState.smallCounterTwo + 1,
+        };
+      }
       return {
-        counter: prevState.counter + 1,
         smallCounterTwo: prevState.smallCounterTwo + 1,
       };
     });
@@ -89,11 +104,16 @@ class Main extends React.Component {
   countingDecTwo = () => {
     this.setState((prevState) => {
       if (prevState.smallCounterTwo > 0) {
-        return {
-          counter: prevState.counter - 1,
-          smallCounterTwo: prevState.smallCounterTwo - 1,
-        };
+        if (prevState.smallCounterTwo === 1) {
+          return {
+            counter: prevState.counter - 1,
+            smallCounterTwo: prevState.smallCounterTwo - 1,
+          };
+        }
       }
+      return {
+        smallCounterTwo: prevState.smallCounterTwo - 1,
+      };
     });
   };
 
@@ -103,8 +123,13 @@ class Main extends React.Component {
 
   countingIncThree = () => {
     this.setState((prevState) => {
+      if (prevState.smallCounterThree === 0) {
+        return {
+          counter: prevState.counter + 1,
+          smallCounterThree: prevState.smallCounterThree + 1,
+        };
+      }
       return {
-        counter: prevState.counter + 1,
         smallCounterThree: prevState.smallCounterThree + 1,
       };
     });
@@ -113,11 +138,16 @@ class Main extends React.Component {
   countingDecThree = () => {
     this.setState((prevState) => {
       if (prevState.smallCounterThree > 0) {
-        return {
-          counter: prevState.counter - 1,
-          smallCounterThree: prevState.smallCounterThree - 1,
-        };
+        if (prevState.smallCounterThree === 1) {
+          return {
+            counter: prevState.counter - 1,
+            smallCounterThree: prevState.smallCounterThree - 1,
+          };
+        }
       }
+      return {
+        smallCounterThree: prevState.smallCounterThree - 1,
+      };
     });
   };
 
@@ -127,8 +157,13 @@ class Main extends React.Component {
 
   countingIncFour = () => {
     this.setState((prevState) => {
+      if (prevState.smallCounterFour === 0) {
+        return {
+          counter: prevState.counter + 1,
+          smallCounterFour: prevState.smallCounterFour + 1,
+        };
+      }
       return {
-        counter: prevState.counter + 1,
         smallCounterFour: prevState.smallCounterFour + 1,
       };
     });
@@ -137,11 +172,16 @@ class Main extends React.Component {
   countingDecFour = () => {
     this.setState((prevState) => {
       if (prevState.smallCounterFour > 0) {
-        return {
-          counter: prevState.counter - 1,
-          smallCounterFour: prevState.smallCounterFour - 1,
-        };
+        if (prevState.smallCounterFour === 1) {
+          return {
+            counter: prevState.counter - 1,
+            smallCounterFour: prevState.smallCounterFour - 1,
+          };
+        }
       }
+      return {
+        smallCounterFour: prevState.smallCounterFour - 1,
+      };
     });
   };
 
