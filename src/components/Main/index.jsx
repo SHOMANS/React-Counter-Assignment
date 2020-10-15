@@ -30,27 +30,6 @@ class Main extends React.Component {
     });
   };
 
-  // countingInc = (mainCounter) => {
-  //   const senpai = mainCounter;
-  //   this.setState((prevState) => {
-  //     return {
-  //       counter: prevState.counter + 1,
-  //       senpai: prevState.mainCounter + 1,
-  //     };
-  //   });
-  // };
-
-  // countingDec = () => {
-  //   this.setState((prevState) => {
-  //     if (prevState.smallCounterOne > 0) {
-  //       return {
-  //         counter: prevState.counter - 1,
-  //         smallCounterOne: prevState.smallCounterOne - 1,
-  //       };
-  //     }
-  //   });
-  // };
-
   // Start Counter One
 
   countingIncOne = () => {
@@ -208,15 +187,6 @@ class Main extends React.Component {
           <button className="reset-btn" onClick={this.reset}>
             <FontAwesomeIcon icon="sync-alt" />
           </button>
-          {/*  */}
-          {/* <SmallCounter
-            countingInc={() => {
-              this.countingInc(smallCounterOne);
-            }}
-            countingDec={this.countingDecOne}
-            counter={smallCounterOne}
-          /> */}
-          {/*  */}
           <SmallCounter
             countingInc={this.countingIncOne}
             countingDec={this.countingDecOne}
