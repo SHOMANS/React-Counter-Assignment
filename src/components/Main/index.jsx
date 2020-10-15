@@ -31,11 +31,11 @@ class Main extends React.Component {
   };
 
   // countingInc = (mainCounter) => {
-  //   const coun = { mainCounter };
+  //   const count = { mainCounter };
   //   this.setState((prevState) => {
   //     return {
   //       counter: prevState.counter + 1,
-  //       ${coun}: prevState.coun + 1,
+  //       ${count}: prevState.count + 1,
   //     };
   //   });
   // };
