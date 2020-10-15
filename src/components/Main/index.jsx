@@ -30,141 +30,44 @@ class Main extends React.Component {
     });
   };
 
-  // Start Counter One
+  counterKeys = {
+    1: "smallCounterOne",
+    2: "smallCounterTwo",
+    3: "smallCounterThree",
+    4: "smallCounterFour",
+  };
 
-  countingIncOne = () => {
+  countingInc = (e) => {
+    const { name } = e.target;
     this.setState((prevState) => {
-      if (prevState.smallCounterOne === 0) {
+      if (prevState[this.counterKeys[name]] === 0) {
         return {
           counter: prevState.counter + 1,
-          smallCounterOne: prevState.smallCounterOne + 1,
+          [this.counterKeys[name]]: prevState[this.counterKeys[name]] + 1,
         };
       }
       return {
-        smallCounterOne: prevState.smallCounterOne + 1,
+        [this.counterKeys[name]]: prevState[this.counterKeys[name]] + 1,
       };
     });
   };
 
-  countingDecOne = () => {
+  countingDec = (e) => {
+    const { name } = e.target;
     this.setState((prevState) => {
-      if (prevState.smallCounterOne > 0) {
-        if (prevState.smallCounterOne === 1) {
+      if (prevState[this.counterKeys[name]] > 0) {
+        if (prevState[this.counterKeys[name]] === 1) {
           return {
             counter: prevState.counter - 1,
-            smallCounterOne: prevState.smallCounterOne - 1,
+            [this.counterKeys[name]]: prevState[this.counterKeys[name]] - 1,
           };
         }
       }
       return {
-        smallCounterOne: prevState.smallCounterOne - 1,
+        [this.counterKeys[name]]: prevState[this.counterKeys[name]] - 1,
       };
     });
   };
-
-  // End Counter One
-
-  // Start Counter Two
-
-  countingIncTwo = () => {
-    this.setState((prevState) => {
-      if (prevState.smallCounterTwo === 0) {
-        return {
-          counter: prevState.counter + 1,
-          smallCounterTwo: prevState.smallCounterTwo + 1,
-        };
-      }
-      return {
-        smallCounterTwo: prevState.smallCounterTwo + 1,
-      };
-    });
-  };
-
-  countingDecTwo = () => {
-    this.setState((prevState) => {
-      if (prevState.smallCounterTwo > 0) {
-        if (prevState.smallCounterTwo === 1) {
-          return {
-            counter: prevState.counter - 1,
-            smallCounterTwo: prevState.smallCounterTwo - 1,
-          };
-        }
-      }
-      return {
-        smallCounterTwo: prevState.smallCounterTwo - 1,
-      };
-    });
-  };
-
-  // End Counter Two
-
-  // Start Counter Three
-
-  countingIncThree = () => {
-    this.setState((prevState) => {
-      if (prevState.smallCounterThree === 0) {
-        return {
-          counter: prevState.counter + 1,
-          smallCounterThree: prevState.smallCounterThree + 1,
-        };
-      }
-      return {
-        smallCounterThree: prevState.smallCounterThree + 1,
-      };
-    });
-  };
-
-  countingDecThree = () => {
-    this.setState((prevState) => {
-      if (prevState.smallCounterThree > 0) {
-        if (prevState.smallCounterThree === 1) {
-          return {
-            counter: prevState.counter - 1,
-            smallCounterThree: prevState.smallCounterThree - 1,
-          };
-        }
-      }
-      return {
-        smallCounterThree: prevState.smallCounterThree - 1,
-      };
-    });
-  };
-
-  // End Counter Three
-
-  // Start Counter Four
-
-  countingIncFour = () => {
-    this.setState((prevState) => {
-      if (prevState.smallCounterFour === 0) {
-        return {
-          counter: prevState.counter + 1,
-          smallCounterFour: prevState.smallCounterFour + 1,
-        };
-      }
-      return {
-        smallCounterFour: prevState.smallCounterFour + 1,
-      };
-    });
-  };
-
-  countingDecFour = () => {
-    this.setState((prevState) => {
-      if (prevState.smallCounterFour > 0) {
-        if (prevState.smallCounterFour === 1) {
-          return {
-            counter: prevState.counter - 1,
-            smallCounterFour: prevState.smallCounterFour - 1,
-          };
-        }
-      }
-      return {
-        smallCounterFour: prevState.smallCounterFour - 1,
-      };
-    });
-  };
-
-  // End Counter Four
 
   render() {
     const {
@@ -188,24 +91,28 @@ class Main extends React.Component {
             <FontAwesomeIcon icon="sync-alt" />
           </button>
           <SmallCounter
-            countingInc={this.countingIncOne}
-            countingDec={this.countingDecOne}
+            countingInc={this.countingInc}
+            countingDec={this.countingDec}
             counter={smallCounterOne}
+            name="1"
           />
           <SmallCounter
-            countingInc={this.countingIncTwo}
-            countingDec={this.countingDecTwo}
+            countingInc={this.countingInc}
+            countingDec={this.countingDec}
             counter={smallCounterTwo}
+            name="2"
           />
           <SmallCounter
-            countingInc={this.countingIncThree}
-            countingDec={this.countingDecThree}
+            countingInc={this.countingInc}
+            countingDec={this.countingDec}
             counter={smallCounterThree}
+            name="3"
           />
           <SmallCounter
-            countingInc={this.countingIncFour}
-            countingDec={this.countingDecFour}
+            countingInc={this.countingInc}
+            countingDec={this.countingDec}
             counter={smallCounterFour}
+            name="4"
           />
         </main>
       </>
