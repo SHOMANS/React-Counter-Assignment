@@ -11,35 +11,23 @@ library.add(faPlusCircle, faMinusCircle);
 
 class SmallCounter extends React.Component {
   render() {
-    const { counter } = this.props;
+    const { counter, name, countingInc, countingDec } = this.props;
 
     return (
       <div className="SmallCounter">
-        <span className="zero" hidden={counter !== 0}>
-          Zero
-        </span>
         <span
-          className="smallCounter"
-          hidden={counter === 0}
+          className={counter === 0 ? "zero" : "smallCounter"}
           onChange={this.reset}
         >
-          {counter}
+          {counter || "Zero"}
         </span>
-        <button
-          className="inc"
-          onClick={() => {
-            this.props.countingInc();
-            // this.counterInc();
-          }}
-        >
+        <button className="inc" onClick={countingInc} name={name}>
           <FontAwesomeIcon icon="plus-circle" className="icon" />
         </button>
         <button
           className="dec"
-          onClick={() => {
-            this.props.countingDec();
-            // this.counterDec();
-          }}
+          onClick={countingDec}
+          name={name}
           disabled={counter === 0}
         >
           <FontAwesomeIcon icon="minus-circle" className="icon" />

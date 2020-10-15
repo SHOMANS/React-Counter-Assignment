@@ -57,6 +57,9 @@ main {
   padding: 2px 10px 3px;
   margin-right: 10px;
   border-radius: 5px;
+  /* display: inline-block; */
+  width: 60px;
+  text-align: center;
 }
 
 .smallCounter{
@@ -67,6 +70,9 @@ main {
   padding: 2px 10px 3px;
   margin-right: 38px;
   border-radius: 5px;
+  /* display: inline-block; */
+  width: 60px;
+  text-align: center;
 }
 
 .inc {
@@ -97,4 +103,5 @@ main {
 .icon {
   font-size: 12px;
   margin: auto;
+  pointer-events: none;
 }
